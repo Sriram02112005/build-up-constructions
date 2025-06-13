@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>BuildUp Construction</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
@@ -22,25 +22,25 @@
   </header>
 
   <section class="hero">
-    <div class="container">
+    <div class="container fade-in">
       <h2>Your Vision, Our Foundation</h2>
       <p>Building the future with precision and passion.</p>
     </div>
   </section>
 
   <section id="services" class="services">
-    <div class="container">
+    <div class="container slide-up">
       <h2>Our Services</h2>
       <div class="service-cards">
-        <div class="card">
+        <div class="card fade-in">
           <h3>Residential Construction</h3>
           <p>We build homes that last generations, with care and craftsmanship.</p>
         </div>
-        <div class="card">
+        <div class="card fade-in">
           <h3>Commercial Projects</h3>
           <p>From retail to office spaces, we construct with scalability in mind.</p>
         </div>
-        <div class="card">
+        <div class="card fade-in">
           <h3>Renovations</h3>
           <p>Transforming spaces to match your evolving needs and taste.</p>
         </div>
@@ -49,18 +49,18 @@
   </section>
 
   <section id="about" class="about">
-    <div class="container">
+    <div class="container slide-up">
       <h2>About Us</h2>
       <p>With over 20 years of experience, BuildUp Construction has delivered high-quality construction solutions tailored to our clients' visions. From planning to completion, our mission is excellence, reliability, and innovation in every structure.</p>
     </div>
   </section>
 
   <section id="contact" class="contact">
-    <div class="container">
+    <div class="container fade-in">
       <h2>Contact Us</h2>
       <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
         <textarea placeholder="Your Message" required></textarea>
         <button type="submit">Send Message</button>
       </form>
@@ -73,5 +73,20 @@
     </div>
   </footer>
 
+  <script>
+    // Intersection Observer for scroll animations
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    document.querySelectorAll('.fade-in, .slide-up').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
